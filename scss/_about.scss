@@ -1,0 +1,170 @@
+.around{
+    @extend %body;
+}
+.contents{
+    @include flex;
+    margin: 40px 30px 0;
+    column-gap: 12px;
+    position: relative;
+
+    .box{
+        opacity: 0;
+        h2{
+            font-size: 38px;
+            font-weight: 600;
+            font-family: 'Abril Fatface', cursive;
+            margin-bottom: 28px;
+        }
+        p{
+            line-height: 26px;
+        }
+        &.open{
+            opacity: 1;
+        }
+    }
+    .click{
+        opacity: 1;
+        transition: all 0.2s;
+        width: 100%;
+        max-width: 67px;
+        &.close{
+            opacity: 0;
+        }
+    }
+
+    .pics{
+        flex-basis: 100px;
+        flex-shrink: 0;
+    }
+}
+
+.resume_Container{
+    padding:120px 0;
+    color: #7a7a7a;
+
+    img{
+        width: 600px;
+        transform: translateX(-50%);
+        position: relative;
+        left: 50%;
+    }
+}
+h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+.logo_Container{
+    padding-bottom: 150px;
+    font-size: 12px;
+    color: #7a7a7a;
+    
+    .items{
+
+        .singleItem{
+            text-align: center;
+            margin-bottom: 70px;
+            img{
+                height: 80px;
+            }
+        }
+    }
+
+    
+    .boxItems{
+        div{
+            @include flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        img{
+            height:80px;
+        }
+        display: flex;
+        justify-content:space-evenly;
+    }
+}
+
+@include media($tablet) {
+    .around{
+    width: 100%;
+    max-width: 980px;
+    padding: 40px;
+    margin: 0 auto;
+    }
+
+    .contents{
+        .click{
+            max-width: 48px;
+        }
+
+        .box{
+            &:before{
+                width: 28px;
+                height: 22px;
+                left:-36px;
+            }
+            &:after{
+                width: 28px;
+                height: 22px;
+                right: 180px;
+            }
+            h2{
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .resume_Container{
+        img{
+            width: 600px;
+        }
+    }
+
+    .logo_Container{
+        h2{
+            font-size: 16px;
+        }
+
+        .items{
+            .singleItem{
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+@include media($mobile){
+    .contents{
+        .box{
+            opacity: 1;
+        }
+        .click{
+            display: none;
+        }
+
+        .pics{
+            display: none;
+        }
+    }
+}
+
+@include media($phone){
+    .logo_Container{
+        padding-bottom: 70px;
+        .items{
+            margin-top:30px;
+            .singleItem{
+                margin-bottom: 30px;
+            }
+        }
+
+        .boxItems{
+            display: block;
+
+            div{
+                margin-bottom: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.pageFooter{
+    border-top: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    color: #909090;
+    h3{
+        font-size: 24px;
+        text-align: center;
+        margin: 40px 0 20px;
+    }
+
+    .footerItems{
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 13px;
+        li{
+            column-gap: 4px;
+            @include flex;
+            a{
+                display: block;
+            }
+            img{
+                width: 25px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    .copy{
+        text-align: right;
+        font-size: 11.5px;
+    }
+}
+
+
+@include media ($mobile){
+    .pageFooter{
+        .footerItems{
+            display: block;
+
+            li{
+                justify-content: stretch;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@include media($phone){
+    .pageFooter{
+        .footerItems{
+            display: block;
+
+            li{
+                justify-content: stretch;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+
+}

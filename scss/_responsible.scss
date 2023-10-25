@@ -1,0 +1,10 @@
+$pc: 1480px;
+$tablet: 980px;
+$mobile: 640px;
+$phone: 375px;
+
+@mixin media($width) {
+    @media all and (max-width:$width) {
+         @content;
+    }
+}

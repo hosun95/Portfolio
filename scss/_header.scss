@@ -1,0 +1,114 @@
+.dimm {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 1000;
+    top:0;left:0;right:0;bottom:0;
+    display: none;
+}
+.plus{
+    position: fixed;
+    left:0;top:0;right:0;
+}
+
+.pageHeader{
+    padding: 16px 0;
+    color: #939292;
+    
+    .inner{
+        @extend %header;
+    }
+
+    .headerContainer{
+      
+        @include flex;
+        h1 a{
+            display: block;
+            height:49px;
+        }
+
+        .gnb{
+            ul{
+                @include flex;
+                font-size: 18px;
+
+                li{
+                    font-weight: 600;
+                }
+                a{
+                    padding: 0  0 0 31px;
+                }
+            }
+            .close_menu{
+                display: none;
+            }
+            
+        }
+
+        .mBtn{
+            display: none;
+
+            
+
+            &.open{
+                .ham_menu{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@include media($mobile){
+    .pageHeader{
+        .headerContainer{
+
+            .gnb{
+                position: fixed;
+                top:0;
+                right:0;
+                background-color: #fff;
+                height: 100vh;
+                display: none;
+                z-index: 1000;
+                width:50%;
+                padding-top:20px;
+
+                ul{
+                    display: block;
+                    margin-top:50px;
+                    color:#939292;
+
+                    li{
+                        margin-bottom:60px;
+                    }
+
+                    a{
+                        padding:0;
+                    }
+                }
+
+                .close_menu{
+                    position: absolute;
+                    right: 0;
+                    cursor: pointer;
+                }
+            }
+            .mBtn{
+                display: block;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+@include media($phone){
+    .pageHeader{
+        .headerContainer{
+            .gnb{
+                width: 70%;
+            }
+        }
+    }
+}

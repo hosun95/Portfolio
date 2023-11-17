@@ -513,11 +513,6 @@ h2 {
     height: 120px;
   }
 }
-.container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .works {
   display: flex;
   justify-content: space-between;
@@ -550,13 +545,16 @@ h2 {
   margin: 50px 0;
 }
 
+.daily_bean {
+  margin: 50px 0;
+}
+
 @media all and (max-width: 640px) {
-  .container {
-    display: block;
-    text-align: center;
-  }
   .works {
     display: block;
+  }
+  .works .box {
+    padding-bottom: 30px;
   }
 }
 .dream_palette {
